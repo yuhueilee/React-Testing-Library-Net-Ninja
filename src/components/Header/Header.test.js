@@ -30,3 +30,11 @@ describe("findBy test cases: should render header component correctly", () => {
         expect(headingElement).toBeInTheDocument();
     });
 });
+
+describe("queryBy test cases: should render header component correctly", () => {
+    it("queryByText: should not render other text except the one passed into title prop", () => {
+        render(<Header title="My Header" />);
+        const headingElement = screen.queryByText(/dogs/i);
+        expect(headingElement).not.toBeInTheDocument();
+    });
+});
