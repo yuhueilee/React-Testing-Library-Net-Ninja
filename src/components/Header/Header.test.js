@@ -38,3 +38,11 @@ describe("queryBy test cases: should render header component correctly", () => {
         expect(headingElement).not.toBeInTheDocument();
     });
 });
+
+describe("getAllBy test cases: should render header component correctly", () => {
+    it("getAllByRole: should render only one heading element", () => {
+        render(<Header title="My Header" />);
+        const headingElements = screen.getAllByRole("heading");
+        expect(headingElements.length).toBe(1);
+    });
+});
