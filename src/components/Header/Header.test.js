@@ -22,3 +22,11 @@ describe("getBy test cases: should render header component correctly", () => {
         expect(headingElement).toBeInTheDocument();
     });
 });
+
+describe("findBy test cases: should render header component correctly", () => {
+    it("findByText: should render same text passed into title prop", async () => {
+        render(<Header title="My Header" />);
+        const headingElement = await screen.findByText(/my header/i);
+        expect(headingElement).toBeInTheDocument();
+    });
+});
